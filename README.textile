@@ -1,0 +1,70 @@
+h2. About
+
+Respect\Env is a tool for wrapping up native PHP functions and resources. It should be very useful to improve testability and modularity on code that uses functions like getenv, shell_exec, filter_input and so on by mocking these functions behaviors on test conditions. 
+
+Decoupling these functionality from your code is as easy as defining a namespace import, and Respect\Env is smart enough to keep state when mocking variables (ex. getenv, putenv and filter_var(INPUT_ENV)).
+
+h2. Support
+
+The current supported functions are:
+
+-getenv
+-putenv
+-shell_exec
+-sys_get_temp_dir
+-filter_input
+-filter_input_array
+-filter_has_var
+
+Roadmap:
+
+-getopt
+-passthru
+-exec
+-system
+-file_get_contents
+-file_put_contents
+
+h2. Usage for Testing
+
+The following code has a testability problem: It must run as root, but running tests on root is not advisable. The following code is a kind of mock/stub:
+
+Class file:
+<pre>
+<?php
+
+namespace MyNS;
+
+//Just add this line to monkey-patch shell_exec
+use Respect\Env\shell_exec;
+
+class MyClass 
+{
+    public static function hasPermissions() 
+    {
+        return shell_exec('whoami') == 'root';
+    }
+}
+</pre>
+
+Test file:
+<pre>
+
+namespace MyNS;
+
+use Respect\Env\Wrapper;
+
+class MyClassTest extends \PHPUnit_Framework_TestCase 
+{
+    public function testFoobar() 
+    {
+        Wrapper::set("custom");
+        Wrapper::getCurrent()->setShellCallback(
+            function() { return 'root';}
+        );
+        $this->assertTrue(MyClass::hasPermissions());
+    }
+}
+</pre>
+
+
