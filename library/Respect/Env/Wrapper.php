@@ -27,6 +27,11 @@ abstract class Wrapper
         return self::$current;
     }
 
+    public static function register()
+    {
+        self::getCurrent();
+    }
+
     public static function evil($namespace, $force=false)
     {
         if ($force || class_exists('\PHPUnit_Framework_TestCase'))
@@ -43,7 +48,7 @@ abstract class Wrapper
                 return Wrapper::getCurrent()->putenv($setting);
             }
 
-            function shell_exe($command)
+            function shell_exec($command)
             {
                 return Wrapper::getCurrent()->shell_exec($command);
             }
