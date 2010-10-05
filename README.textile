@@ -4,7 +4,7 @@ Respect\Env is a tool for wrapping up native PHP functions and resources. It sho
 
 Decoupling these functionality from your code is as easy as importing and prefixing some namespaces in strategic locations, and Respect\Env is smart enough to keep state when mocking variables (ex. getenv, putenv and filter_var(INPUT_ENV)).
 
-You can also go Wrapper::evil(&#x5f;&#x5f;NAMESPACE&#x5f;&#x5f;) to eval() functions without prefixing anything, but thats just wrong and we took measures to allow that only in test environments (PHPUnit loaded).
+You can also go Wrapper::evil($ns) to eval() functions without prefixing anything, but thats just wrong and we took measures to allow that only in test environments (PHPUnit loaded).
 
 h2. Support
 
@@ -79,7 +79,7 @@ Class file:
 
 namespace MyNS;
 
-Respect\Env\Wrapper::evil(&#x5f;&#x5f;NAMESPACE&#x5f;&#x5f;);
+Respect\Env\Wrapper::evil('MyNS');
 
 class MyClass 
 {
