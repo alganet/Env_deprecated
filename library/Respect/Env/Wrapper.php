@@ -9,6 +9,7 @@ abstract class Wrapper
 {
 
     public static $current;
+    protected static $evaldNs = array();
 
     public static function set($wrapper)
     {
@@ -34,6 +35,9 @@ abstract class Wrapper
 
     public static function evil($namespace, $force=false)
     {
+        if (isset(self::$evaldNs[$namespace]))
+            return;
+        self::$evaldNs[$namespace] = true;
         if ($force || class_exists('\PHPUnit_Framework_TestCase'))
             eval(
                 'namespace ' . $namespace . '; 
