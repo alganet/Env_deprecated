@@ -43,4 +43,39 @@ class Raw implements Wrappable
         return filter_has_var($type, $variable_name);
     }
 
+    public function file_get_contents($filename, $use_include_path=false,
+        $context=null, $offset=null, $maxlen=null)
+    {
+        switch (func_num_args()) {
+            case 1:
+            case 2 :
+            case 3:
+                return file_get_contents(
+                    $filename, $use_include_path, $context
+                );
+                break;
+            case 4:
+            case 5:
+                return file_get_contents(
+                    $filename, $use_include_path, $context, $offset, $maxlen
+                );
+                break;
+        }
+    }
+
+    public function is_writable($filaname)
+    {
+        return is_writable($filename);
+    }
+
+    public function file_exists($filaname)
+    {
+        return file_exists($filename);
+    }
+
+    public function file_put_contents($filename, $data, $flags=0, $context=null)
+    {
+        return file_put_contents($filename, $data, $flags, $context);
+    }
+
 }

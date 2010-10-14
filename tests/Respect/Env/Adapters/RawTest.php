@@ -44,9 +44,22 @@ class RawTest extends \PHPUnit_Framework_TestCase
 
     public function testFilterHasVar()
     {
-        $this->assertTrue($this->object->filter_has_var(INPUT_SERVER,
-                'SCRIPT_NAME'));
-        $this->assertFalse($this->object->filter_has_var(INPUT_SERVER, 'AIDS'));
+        $this->assertTrue(
+            $this->object->filter_has_var(INPUT_SERVER, 'SCRIPT_NAME')
+        );
+        $this->assertFalse(
+            $this->object->filter_has_var(INPUT_SERVER, 'FLU')
+        );
+    }
+
+    public function testFileSystem()
+    {
+        $someDir = sys_get_temp_dir();
+        $someFile = $someDir . '/RawTest.txt';
+        $this->object->file_put_contents($someFile, 'fooBar');
+        $this->assertEquals(
+            'fooBar', $this->object->file_get_contents($someFile)
+        );
     }
 
 }

@@ -19,4 +19,8 @@ interface Wrappable
     public function filter_input_array($type, $definition=null);
 
     public function filter_has_var($type, $variable_name);
+    
+    public function file_get_contents($filename, $use_include_path=false, $context=null, $offset=-1, $maxlen=-1);
+    
+    public function file_put_contents($filename, $data, $flags=0, $context=null);
 }

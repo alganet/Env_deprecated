@@ -77,6 +77,28 @@ abstract class Wrapper
             function filter_has_var($type, $variable_name)
             {
                 return Wrapper::getCurrent()->filter_has_var($type, $variable_name);
+            }
+            
+            function is_writable($filename) 
+            {
+                return Wrapper::getCurrent()->is_writable($filename);
+            }
+            
+            function file_exists($filename) 
+            {
+                return Wrapper::getCurrent()->file_exists($filename);
+            }
+            
+            function file_get_contents($filename, $use_include_path=false,
+                $context=null, $offset=-1, $maxlen=-1)
+            {
+                return Wrapper::getCurrent()->file_get_contents($filename, $use_include_path, $context,
+                    $offset, $maxlen);
+            }
+
+            function file_put_contents($filename, $data, $flags=0, $context=null)
+            {
+                return Wrapper::getCurrent()->file_put_contents($filename, $data, $flags, $context);
             }'
             );
     }

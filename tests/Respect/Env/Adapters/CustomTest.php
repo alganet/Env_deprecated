@@ -121,4 +121,12 @@ class CustomTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testFileSystemFunctions()
+    {
+        $this->object->file_put_contents('/foo/bar', 'fooBar');
+        $this->assertEquals(
+            'fooBar', $this->object->file_get_contents('/foo/bar')
+        );
+    }
+
 }

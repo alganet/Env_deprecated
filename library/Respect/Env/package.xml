@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
-    http://pear.php.net/dtd/tasks-1.0.xsd
-    http://pear.php.net/dtd/package-2.0
-    http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Env</name>
  <uri>http://github.com/Respect/Env</uri>
  <summary>Environment Wrapper</summary>
@@ -13,8 +10,8 @@
   <email>alexandre@gaigalas.net</email>
   <active>yes</active>
  </lead>
- <date>2010-10-05</date>
- <time>11:03:06</time>
+ <date>2010-10-13</date>
+ <time>22:07:46</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -29,10 +26,10 @@ First Version
  </notes>
  <contents>
   <dir baseinstalldir="Respect/Env" name="/">
-   <file baseinstalldir="Respect/Env" md5sum="761fb8cf4e1c5b3e3de3d310498e49df" name="Adapters/Custom.php" role="php" />
-   <file baseinstalldir="Respect/Env" md5sum="a9761e50c6e93541f20073dcda916dc8" name="Adapters/Raw.php" role="php" />
-   <file baseinstalldir="Respect/Env" md5sum="9ebfbd167e67db98e77dca8ef2c22eac" name="Wrappable.php" role="php" />
-   <file baseinstalldir="Respect/Env" md5sum="010c115e990d73a7b5a56c6fbe09855e" name="Wrapper.php" role="php" />
+   <file baseinstalldir="Respect/Env" md5sum="449e77c984f01d31106cf96541f5116f" name="Adapters/Custom.php" role="php" />
+   <file baseinstalldir="Respect/Env" md5sum="dd384b422400d5feaec9f5a728acc106" name="Adapters/Raw.php" role="php" />
+   <file baseinstalldir="Respect/Env" md5sum="07075f40956e97bc3e88541fa0c3ddfc" name="Wrappable.php" role="php" />
+   <file baseinstalldir="Respect/Env" md5sum="354c03914399a5c131403616c13a0b1a" name="Wrapper.php" role="php" />
   </dir>
  </contents>
  <dependencies>
@@ -56,7 +53,7 @@ First Version
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2010-10-05</date>
+   <date>2010-10-13</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD Style</license>
    <notes>
 First Version
